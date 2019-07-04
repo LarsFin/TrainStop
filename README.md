@@ -5,14 +5,14 @@ Simple project to practice C# development in .NET Core. Project will practice TD
 
 User Stories;
 
-Trains have names [ ]
+Trains have names [✓]
 ```
 As a Train Manager,
 So I can easily refer to my train,
 Trains should have names.
 ```
 
-Stations have names [ ]
+Stations have names [✓]
 ```
 As a Train Manager,
 So I can easily refer to my destinations,
