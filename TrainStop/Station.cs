@@ -33,6 +33,10 @@ namespace TrainStop
             {
                 if (trains[i].GetName() == name)
                 {
+                    if (trains[i].IsInJourney())
+                    {
+                        throw new ApplicationException("Cannot release moving train!");
+                    }
                     validCall = true;
                     trains[i].StartJourney();
                     trains.Remove(trains[i]);                
