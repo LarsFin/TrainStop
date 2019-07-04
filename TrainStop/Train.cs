@@ -17,7 +17,7 @@
 
         public void StopJourney()
         {
-            
+            inJourney = false;
         }
 
         public string GetName() => name;
