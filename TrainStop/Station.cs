@@ -19,7 +19,7 @@ namespace TrainStop
         {
             if (!train.IsInJourney())
             {
-                throw new ArgumentException("Train is not on journey!");
+                throw new ApplicationException("Train is not on journey!");
             }
             train.StopJourney();
             trains.Add(train);
@@ -34,12 +34,13 @@ namespace TrainStop
                 if (trains[i].GetName() == name)
                 {
                     validCall = true;
-                    trains.Remove(trains[i]);
+                    trains[i].StartJourney();
+                    trains.Remove(trains[i]);                
                 }
             }
             if (!validCall)
             {
-                throw new ArgumentException("Train does not exist at station");
+                throw new ApplicationException("Train does not exist at station");
             }
         }
 

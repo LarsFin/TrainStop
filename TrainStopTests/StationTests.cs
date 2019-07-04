@@ -51,11 +51,10 @@ namespace TrainStopTests
 
         [TestMethod]
         [Description("Tests to make sure only moving Trains can be added to Station")]
-        [ExpectedException(typeof(ArgumentException), "Train is not on journey!")]
         public void StoppedTrainCannotBeAddedTest()
         {
             var mockTrain = new Mock<Train>("Mock-Train");
-            station.ReceiveTrain(mockTrain.Object);
+            Assert.ThrowsException<ApplicationException>(() => station.ReceiveTrain(mockTrain.Object));
         }
 
         [TestMethod]
@@ -84,10 +83,9 @@ namespace TrainStopTests
 
         [TestMethod]
         [Description("Tests to make sure an exception is thrown when releasing a missing train")]
-        [ExpectedException(typeof(ArgumentException), "Train does not exist at station")]
         public void MissingTrainCannotBeReleasedTest()
         {
-            station.ReleaseTrain("Non-existant Train");
+            Assert.ThrowsException<ApplicationException>(() => station.ReleaseTrain("Non-existant Train"));
         }
 
         [TestMethod]
@@ -102,6 +100,18 @@ namespace TrainStopTests
             mockTrain.Setup(train => train.GetName()).Returns(trainName);
             station.ReleaseTrain(trainName);
             mockTrain.Verify(train => train.StartJourney(), Times.Once());
+        }
+
+        [TestMethod]
+        [Description("Tests to make sure a moving train cannot be released")]
+        public void MovingTrainsCannotBeReleasedTest()
+        {
+            string trainName = "Mock-Train";
+            var mockTrain = new Mock<Train>(trainName);
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
+            station.ReceiveTrain(mockTrain.Object);
+            mockTrain.Setup(train => train.GetName()).Returns(trainName);
+            Assert.ThrowsException<ApplicationException>(() => station.ReleaseTrain(trainName));
         }
     }
 }
