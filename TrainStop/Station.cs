@@ -28,7 +28,13 @@ namespace TrainStop
         // Releases a train from the station by passing the train name
         public void ReleaseTrain(string name)
         {
-
+            for (int i = 0; i < trains.Count; i++)
+            {
+                if (trains[i].GetName() == name)
+                {
+                    trains.Remove(trains[i]);
+                }
+            }
         }
 
         // Returns the name of the station.

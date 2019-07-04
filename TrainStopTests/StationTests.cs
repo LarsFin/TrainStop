@@ -77,6 +77,7 @@ namespace TrainStopTests
             mockTrain.Setup(train => train.IsInJourney()).Returns(true);
             station.ReceiveTrain(mockTrain.Object);
             mockTrain.Setup(train => train.IsInJourney()).Returns(false);
+            mockTrain.Setup(train => train.GetName()).Returns(trainName);
             station.ReleaseTrain(trainName);
             Assert.IsTrue(station.IsEmpty());
         }

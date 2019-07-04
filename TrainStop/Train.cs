@@ -23,7 +23,7 @@
         }
 
         // Returns the private name variable of the Train
-        public string GetName() => name;
+        public virtual string GetName() => name;
 
         // Returns the status of a Train's journy
         public virtual bool IsInJourney() => inJourney;
