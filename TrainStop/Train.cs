@@ -15,6 +15,11 @@
             inJourney = true;
         }
 
+        public void StopJourney()
+        {
+            
+        }
+
         public string GetName() => name;
 
         public bool IsInJourney() => inJourney;
