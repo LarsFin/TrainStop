@@ -14,6 +14,7 @@ namespace TrainStop
         {
             this.name = name;
             trains = new List<Train>();
+            capacity = DEFAULT_CAPACITY;
         }
 
         // Station receives a train into its platforms

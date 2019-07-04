@@ -118,7 +118,7 @@ namespace TrainStopTests
         [Description("Tests to make sure a default capacity is set when no value passed to Station instantiation")]
         public void DefaultCapacitySetTest()
         {
-            Assert.AreEqual(6, station.GetCapacity());
+            Assert.AreEqual(station.GetDefaultCapacity(), station.GetCapacity());
         }
     }
 }
