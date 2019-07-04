@@ -19,13 +19,13 @@ namespace TrainStopTests
         [TestMethod]
         public void setNameTest()
         {
-            Assert.AreEqual(name, train.getName());
+            Assert.AreEqual(name, train.GetName());
         }
 
         [TestMethod]
         public void initialJouneyStateTest()
         {
-            Assert.IsFalse(train.isInJourney());
+            Assert.IsFalse(train.IsInJourney());
         }
 
     }

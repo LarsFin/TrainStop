@@ -2,22 +2,16 @@
 {
     public class Train
     {
-        private string name;
-        private bool inJourney;
+        private readonly string name;
+        private readonly bool inJourney;
 
         public Train(string name)
         {
             this.name = name;
         }
 
-        public string getName()
-        {
-            return name;
-        }
+        public string GetName() => name;
 
-        public bool isInJourney()
-        {
-            return inJourney;
-        }
+        public bool IsInJourney() => inJourney;
     }
 }

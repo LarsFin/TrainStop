@@ -1,18 +1,14 @@
-﻿using System;
-namespace TrainStop
+﻿namespace TrainStop
 {
     public class Station
     {
-        private string name;
+        private readonly string name;
 
         public Station(string name)
         {
             this.name = name;
         }
 
-        public string getName()
-        {
-            return name;
-        }
+        public string GetName() => name;
     }
 }

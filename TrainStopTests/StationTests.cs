@@ -19,7 +19,7 @@ namespace TrainStopTests
         [TestMethod]
         public void setNameTest()
         {
-            Assert.AreEqual(name, station.getName());
+            Assert.AreEqual(name, station.GetName());
         }
 
     }
