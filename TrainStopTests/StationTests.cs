@@ -129,5 +129,18 @@ namespace TrainStopTests
             station = new Station("Windsor & Eton Riverside", customCapacity);
             Assert.AreEqual(customCapacity, station.GetCapacity());
         }
+
+        [TestMethod]
+        [Description("Tests to make sure capacity of trains cannot be breached")]
+        public void CannotBreachCapacity()
+        {
+            var mockTrain = new Mock<Train>("Mock-Train");
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
+            for (int i = 0; i <= station.GetCapacity(); i++)
+            {
+                station.ReceiveTrain(mockTrain.Object);
+            }
+            Assert.ThrowsException<ApplicationException>(() => station.ReceiveTrain(mockTrain.Object));
+        }
     }
 }
