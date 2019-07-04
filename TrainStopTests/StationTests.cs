@@ -120,5 +120,14 @@ namespace TrainStopTests
         {
             Assert.AreEqual(station.GetDefaultCapacity(), station.GetCapacity());
         }
+
+        [TestMethod]
+        [Description("Tests to make sure you can pass a capacity for Station instantiation")]
+        public void CustomCapacitySetTest()
+        {
+            int customCapacity = 2;
+            station = new Station("Windsor & Eton Riverside", customCapacity);
+            Assert.AreEqual(customCapacity, station.GetCapacity());
+        }
     }
 }

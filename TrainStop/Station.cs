@@ -17,6 +17,11 @@ namespace TrainStop
             capacity = DEFAULT_CAPACITY;
         }
 
+        public Station(string name, int customCapacity)
+        {
+            
+        }
+
         // Station receives a train into its platforms
         public void ReceiveTrain(Train train)
         {
