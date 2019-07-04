@@ -22,5 +22,11 @@ namespace TrainStopTests
             Assert.AreEqual(name, train.getName());
         }
 
+        [TestMethod]
+        public void initialJouneyStateTest()
+        {
+            Assert.IsFalse(train.isInJourney());
+        }
+
     }
 }

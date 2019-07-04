@@ -3,6 +3,7 @@
     public class Train
     {
         private string name;
+        private bool inJourney;
 
         public Train(string name)
         {
@@ -12,6 +13,11 @@
         public string getName()
         {
             return name;
+        }
+
+        public bool isInJourney()
+        {
+            return inJourney;
         }
     }
 }
