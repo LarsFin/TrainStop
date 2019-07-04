@@ -3,7 +3,7 @@
     public class Train
     {
         private readonly string name;
-        private readonly bool inJourney;
+        private bool inJourney;
 
         public Train(string name)
         {
@@ -12,7 +12,7 @@
 
         public void StartJourney()
         {
-
+            inJourney = true;
         }
 
         public string GetName() => name;
