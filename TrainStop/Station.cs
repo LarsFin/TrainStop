@@ -12,15 +12,19 @@ namespace TrainStop
             trains = new List<Train>();
         }
 
+        // Station receives a train into its platforms
         public void ReceiveTrain(Train train)
         {
-
+            trains.Add(train);
         }
 
+        // Returns the name of the station.
         public string GetName() => name;
 
+        // Returns the list of trains within the station.
         public List<Train> GetTrains() => trains;
 
+        // Returns whether or not the station holds any trains.
         public bool IsEmpty() => trains.Count == 0;
     }
 }
