@@ -81,5 +81,13 @@ namespace TrainStopTests
             station.ReleaseTrain(trainName);
             Assert.IsTrue(station.IsEmpty());
         }
+
+        [TestMethod]
+        [Description("Tests to make sure an exception is thrown when releasing a missing train")]
+        [ExpectedException(typeof(ArgumentException), "Train does not exist at station")]
+        public void MissingTrainCannotBeReleasedTest()
+        {
+            station.ReleaseTrain("Non-existant Train");
+        }
     }
 }
