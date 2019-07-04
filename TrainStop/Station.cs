@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+
 namespace TrainStop
 {
     public class Station
@@ -15,6 +17,10 @@ namespace TrainStop
         // Station receives a train into its platforms
         public void ReceiveTrain(Train train)
         {
+            if (!train.IsInJourney())
+            {
+                throw new ArgumentException("Train is not on journey!");
+            }
             trains.Add(train);
         }
 
