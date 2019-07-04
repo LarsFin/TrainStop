@@ -67,5 +67,18 @@ namespace TrainStopTests
             station.ReceiveTrain(mockTrain.Object);
             mockTrain.Verify(train => train.StopJourney(), Times.Once());
         }
+
+        [TestMethod]
+        [Description("Tests to make sure a train can be released from a station")]
+        public void TrainIsReleasedTest()
+        {
+            string trainName = "Mock-Train";
+            var mockTrain = new Mock<Train>(trainName);
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
+            station.ReceiveTrain(mockTrain.Object);
+            mockTrain.Setup(train => train.IsInJourney()).Returns(false);
+            station.ReleaseTrain(trainName);
+            Assert.IsTrue(station.IsEmpty());
+        }
     }
 }

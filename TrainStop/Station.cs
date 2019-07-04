@@ -25,6 +25,12 @@ namespace TrainStop
             trains.Add(train);
         }
 
+        // Releases a train from the station by passing the train name
+        public void ReleaseTrain(string name)
+        {
+
+        }
+
         // Returns the name of the station.
         public string GetName() => name;
 
