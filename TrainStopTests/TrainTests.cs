@@ -17,12 +17,14 @@ namespace TrainStopTests
         }
 
         [TestMethod]
+        [Description("Tests to see if name has been set in initialisation of Train")]
         public void setNameTest()
         {
             Assert.AreEqual(name, train.GetName());
         }
 
         [TestMethod]
+        [Description("Tests to see that train is initialised as not being in a journy")]
         public void initialJouneyStateTest()
         {
             Assert.IsFalse(train.IsInJourney());
