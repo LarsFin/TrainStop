@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System.Collections.Generic;
 using TrainStop;
 
@@ -35,6 +36,15 @@ namespace TrainStopTests
         public void InitiallyEmptyTrainListTest()
         {
             Assert.IsTrue(station.IsEmpty());
+        }
+
+        [TestMethod]
+        [Description("Tests to make sure a Train is added to a Station")]
+        public void TrainIsAddedTest()
+        {
+            var mockTrain = new Mock<Train>("Mock-Train");
+            station.ReceiveTrain(mockTrain.Object);
+            Assert.IsTrue(station.GetTrains().Contains(mockTrain.Object));
         }
     }
 }

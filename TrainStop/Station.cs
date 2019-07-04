@@ -12,6 +12,11 @@ namespace TrainStop
             trains = new List<Train>();
         }
 
+        public void ReceiveTrain(Train train)
+        {
+
+        }
+
         public string GetName() => name;
 
         public List<Train> GetTrains() => trains;
