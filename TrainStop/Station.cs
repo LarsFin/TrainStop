@@ -19,7 +19,9 @@ namespace TrainStop
 
         public Station(string name, int customCapacity)
         {
-            
+            this.name = name;
+            trains = new List<Train>();
+            capacity = customCapacity;
         }
 
         // Station receives a train into its platforms
