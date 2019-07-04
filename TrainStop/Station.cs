@@ -9,6 +9,7 @@ namespace TrainStop
         public Station(string name)
         {
             this.name = name;
+            trains = new List<Train>();
         }
 
         public string GetName() => name;
