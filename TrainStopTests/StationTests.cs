@@ -113,5 +113,12 @@ namespace TrainStopTests
             mockTrain.Setup(train => train.GetName()).Returns(trainName);
             Assert.ThrowsException<ApplicationException>(() => station.ReleaseTrain(trainName));
         }
+
+        [TestMethod]
+        [Description("Tests to make sure a default capacity is set when no value passed to Station instantiation")]
+        public void DefaultCapacitySetTest()
+        {
+            Assert.AreEqual(6, station.GetCapacity());
+        }
     }
 }

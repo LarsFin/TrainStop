@@ -89,11 +89,25 @@ So I can make it on time to my destinations,
 Train journies should be started when leaving a station.
 ```
 
-Stations can only release stopped trains [ ]
+Stations can only release stopped trains [✓]
 ```
 As a Station Manager,
 To make sure trains slowly leave the station,
 Stations should only release Trains which are stopped.
+```
+
+Stations are instantiated with a maximum capacity for trains [ ]
+```
+As a Station Manager,
+So I can avoid needless work,
+Not passing a capacity will set a default capacity value.
+```
+
+Stations can be instantiated with a maximum capacity passed for trains [ ]
+```
+As a Station Manager,
+So I can manage expected traffic of trains,
+Stations should be instantiated with a passed capacity.
 ```
 
 Stations can store a maximum number of trains [ ]

@@ -7,6 +7,8 @@ namespace TrainStop
     {
         private readonly string name;
         private readonly List<Train> trains;
+        private const int DEFAULT_CAPACITY = 6;
+        private readonly int capacity;
 
         public Station(string name)
         {
@@ -58,5 +60,11 @@ namespace TrainStop
 
         // Returns whether or not the station holds any trains.
         public bool IsEmpty() => trains.Count == 0;
+
+        // Returns the default capacity of the station.
+        public int GetDefaultCapacity() => DEFAULT_CAPACITY;
+
+        // Returns the capacity of the station.
+        public int GetCapacity() => capacity;
     }
 }
