@@ -7,7 +7,6 @@ namespace TrainStopTests
     [TestClass]
     public class StationTests
     {
-
         Station station;
         string name = "London Waterloo";
 

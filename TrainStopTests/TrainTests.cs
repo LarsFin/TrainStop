@@ -6,7 +6,7 @@ namespace TrainStopTests
     [TestClass]
     public class TrainTests
     {
-
+        
         Train train;
         string name = "SWR820";
 
@@ -28,6 +28,14 @@ namespace TrainStopTests
         public void initialJouneyStateTest()
         {
             Assert.IsFalse(train.IsInJourney());
+        }
+
+        [TestMethod]
+        [Description("Tests to see that train can be set in motion")]
+        public void canSetInJourneyTest()
+        {
+            train.StartJourney();
+            Assert.IsTrue(train.IsInJourney());
         }
 
     }

@@ -26,11 +26,25 @@ So I know when a train has left,
 Trains should have a state of motion.
 ```
 
-Stations should be able to hold trains [ ]
+Stations should be able to hold trains [✓]
 ```
 As a Train Manager,
 So I can stop my train at a station,
 Stations should be able to hold a train.
+```
+
+Train's state of motion can be set to true [ ]
+```
+As a Train Manager,
+So I can start my train,
+Trains should be able to be set in motion.
+```
+
+Trains's state of motion can be set to false [ ]
+```
+As a Train Manager,
+So I can stop my train,
+Trains should be able to be set as stopped.
 ```
 
 Stations should be able to receive trains [ ]

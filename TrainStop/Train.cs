@@ -10,6 +10,11 @@
             this.name = name;
         }
 
+        public void StartJourney()
+        {
+
+        }
+
         public string GetName() => name;
 
         public bool IsInJourney() => inJourney;
