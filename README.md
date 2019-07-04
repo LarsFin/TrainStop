@@ -68,11 +68,18 @@ So passengers can easily dissembark,
 Trains should be stopped at Stations.
 ```
 
-Trains can depart from Stations [ ]
+Trains can depart from Stations [✓]
 ```
 As a Train Manager,
 So I can leave a station by train,
 Stations should have an effective method by which to release trains.
+```
+
+Exception thrown when a train which doesn't exist is released from station [ ]
+```
+As a Station Manager,
+So I know when a train release was faulty,
+An Alert should be raised when a train is released which isn't at the station.
 ```
 
 Trains which depart from Stations should begin their journey [ ]
