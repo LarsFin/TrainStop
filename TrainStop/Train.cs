@@ -6,6 +6,7 @@
 
         public Train(string name)
         {
+            this.name = name;
         }
 
         public string getName()
