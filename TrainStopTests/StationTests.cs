@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System;
 using System.Collections.Generic;
 using TrainStop;
 
@@ -43,8 +44,18 @@ namespace TrainStopTests
         public void TrainIsAddedTest()
         {
             var mockTrain = new Mock<Train>("Mock-Train");
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
             station.ReceiveTrain(mockTrain.Object);
             Assert.IsTrue(station.GetTrains().Contains(mockTrain.Object));
+        }
+
+        [TestMethod]
+        [Description("Tests to make sure only moving Trains can be added to Station")]
+        [ExpectedException(typeof(ArgumentException), "Train is not on journey!")]
+        public void StoppedTrainCannotBeAddedTest()
+        {
+            var mockTrain = new Mock<Train>("Mock-Train");
+            station.ReceiveTrain(mockTrain.Object);
         }
     }
 }

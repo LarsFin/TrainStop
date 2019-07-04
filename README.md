@@ -47,11 +47,18 @@ So I can stop my train,
 Trains should be able to be set as stopped.
 ```
 
-Stations should be able to receive trains [ ]
+Stations should be able to receive trains [✓]
 ```
 As a Train Manager,
 So I can enter a station by train,
 Stations should have an effective method by which to receive trains.
+```
+
+Stations can only receive trains on a journey [ ]
+```
+As a Station Manager,
+To make sure trains park within the station,
+Stations should only take Trains on a journey.
 ```
 
 Trains received by Stations should have their journies stopped [ ]
@@ -73,6 +80,13 @@ Trains which depart from Stations should begin their journey [ ]
 As a Train Manager,
 So I can make it on time to my destinations,
 Train journies should be started when leaving a station.
+```
+
+Stations can only release stopped trains [ ]
+```
+As a Station Manager,
+To make sure trains slowly leave the station,
+Stations should only release Trains which are stopped.
 ```
 
 Stations can store a maximum number of trains [ ]

@@ -26,6 +26,6 @@
         public string GetName() => name;
 
         // Returns the status of a Train's journy
-        public bool IsInJourney() => inJourney;
+        public virtual bool IsInJourney() => inJourney;
     }
 }
