@@ -21,6 +21,7 @@ namespace TrainStop
             {
                 throw new ArgumentException("Train is not on journey!");
             }
+            train.StopJourney();
             trains.Add(train);
         }
 
