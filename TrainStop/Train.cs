@@ -17,7 +17,7 @@
         }
 
         // Stops a journey for a Train
-        public void StopJourney()
+        public virtual void StopJourney()
         {
             inJourney = false;
         }

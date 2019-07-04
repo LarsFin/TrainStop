@@ -57,5 +57,15 @@ namespace TrainStopTests
             var mockTrain = new Mock<Train>("Mock-Train");
             station.ReceiveTrain(mockTrain.Object);
         }
+
+        [TestMethod]
+        [Description("Tests to make sure 'stopJourney' is called on received trains")]
+        public void ReceivedTrainIsStopped()
+        {
+            var mockTrain = new Mock<Train>("Mock-Train");
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
+            station.ReceiveTrain(mockTrain.Object);
+            mockTrain.Verify(train => train.StopJourney(), Times.Once());
+        }
     }
 }
