@@ -29,17 +29,19 @@ namespace TrainStop
         public void ReleaseTrain(string name)
         {
             bool validCall = false;
+            Train train;
             for (int i = 0; i < trains.Count; i++)
             {
-                if (trains[i].GetName() == name)
+                train = trains[i];
+                if (train.GetName() == name)
                 {
-                    if (trains[i].IsInJourney())
+                    if (train.IsInJourney())
                     {
                         throw new ApplicationException("Cannot release moving train!");
                     }
                     validCall = true;
-                    trains[i].StartJourney();
-                    trains.Remove(trains[i]);                
+                    train.StartJourney();
+                    trains.Remove(train);                
                 }
             }
             if (!validCall)
