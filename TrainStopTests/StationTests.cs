@@ -89,5 +89,19 @@ namespace TrainStopTests
         {
             station.ReleaseTrain("Non-existant Train");
         }
+
+        [TestMethod]
+        [Description("Tests to make sure 'startJourney' is called on released trains")]
+        public void ReleasedTrainIsStarted()
+        {
+            string trainName = "Mock-Train";
+            var mockTrain = new Mock<Train>(trainName);
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
+            station.ReceiveTrain(mockTrain.Object);
+            mockTrain.Setup(train => train.IsInJourney()).Returns(false);
+            mockTrain.Setup(train => train.GetName()).Returns(trainName);
+            station.ReleaseTrain(trainName);
+            mockTrain.Verify(train => train.StartJourney(), Times.Once());
+        }
     }
 }

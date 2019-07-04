@@ -11,7 +11,7 @@
         }
 
         // Begins a journey for a Train
-        public void StartJourney()
+        public virtual void StartJourney()
         {
             inJourney = true;
         }
