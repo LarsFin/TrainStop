@@ -40,7 +40,7 @@ So I can start my train,
 Trains should be able to be set in motion.
 ```
 
-Trains's state of motion can be set to false [ ]
+Trains's state of motion can be set to false [✓]
 ```
 As a Train Manager,
 So I can stop my train,
@@ -54,11 +54,25 @@ So I can enter a station by train,
 Stations should have an effective method by which to receive trains.
 ```
 
+Trains received by Stations should have their journies stopped [ ]
+```
+As a Train Manager,
+So passengers can easily dissembark,
+Trains should be stopped at Stations.
+```
+
 Trains can depart from Stations [ ]
 ```
 As a Train Manager,
 So I can leave a station by train,
 Stations should have an effective method by which to release trains.
+```
+
+Trains which depart from Stations should begin their journey [ ]
+```
+As a Train Manager,
+So I can make it on time to my destinations,
+Train journies should be started when leaving a station.
 ```
 
 Stations can store a maximum number of trains [ ]
