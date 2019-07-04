@@ -7,6 +7,7 @@ namespace TrainStop
 
         public Station(string name)
         {
+            this.name = name;
         }
 
         public string getName()
