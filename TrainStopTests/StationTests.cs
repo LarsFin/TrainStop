@@ -136,7 +136,7 @@ namespace TrainStopTests
         {
             var mockTrain = new Mock<Train>("Mock-Train");
             mockTrain.Setup(train => train.IsInJourney()).Returns(true);
-            for (int i = 0; i <= station.GetCapacity(); i++)
+            for (int i = 0; i < station.GetCapacity(); i++)
             {
                 station.ReceiveTrain(mockTrain.Object);
             }

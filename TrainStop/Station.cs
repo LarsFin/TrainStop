@@ -27,6 +27,10 @@ namespace TrainStop
         // Station receives a train into its platforms
         public void ReceiveTrain(Train train)
         {
+            if (trains.Count == capacity)
+            {
+                throw new ApplicationException("Full! Cannot accept anymore trains");
+            }
             if (!train.IsInJourney())
             {
                 throw new ApplicationException("Train is not on journey!");
