@@ -47,6 +47,10 @@ namespace TrainStop
         // Releases a train from the station by passing the train name
         public void ReleaseTrain(string name)
         {
+            if (underMaintenance)
+            {
+                throw new ApplicationException("Cannot release train while under maintenance");
+            }
             bool validCall = false;
             Train train;
             for (int i = 0; i < trains.Count; i++)
