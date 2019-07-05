@@ -174,5 +174,14 @@ namespace TrainStopTests
             mockTrain.Setup(train => train.GetName()).Returns(trainName);
             Assert.ThrowsException<ApplicationException>(() => station.ReleaseTrain(trainName));
         }
+
+        [TestMethod]
+        [Description("Tests to make sure maintenance can be stopped on a station")]
+        public void MaintenanceCanBeStoppedTest()
+        {
+            station.StartMaintenance();
+            station.StopMaintenance();
+            Assert.IsFalse(station.IsUnderMaintenace());
+        }
     }
 }

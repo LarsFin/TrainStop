@@ -79,6 +79,12 @@ namespace TrainStop
             underMaintenance = true;
         }
 
+        // Stops maintenance on a station
+        public void StopMaintenance()
+        {
+            
+        }
+
         // Returns the name of the station.
         public string GetName() => name;
 
