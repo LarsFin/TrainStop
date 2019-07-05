@@ -59,7 +59,7 @@ namespace TrainStopTests
 
         [TestMethod]
         [Description("Tests to make sure 'stopJourney' is called on received trains")]
-        public void ReceivedTrainIsStopped()
+        public void ReceivedTrainIsStoppedTest()
         {
             var mockTrain = new Mock<Train>("Mock-Train");
             mockTrain.Setup(train => train.IsInJourney()).Returns(true);
@@ -90,7 +90,7 @@ namespace TrainStopTests
 
         [TestMethod]
         [Description("Tests to make sure 'startJourney' is called on released trains")]
-        public void ReleasedTrainIsStarted()
+        public void ReleasedTrainIsStartedTest()
         {
             string trainName = "Mock-Train";
             var mockTrain = new Mock<Train>(trainName);
@@ -132,7 +132,7 @@ namespace TrainStopTests
 
         [TestMethod]
         [Description("Tests to make sure capacity of trains cannot be breached")]
-        public void CannotBreachCapacity()
+        public void CannotBreachCapacityTest()
         {
             var mockTrain = new Mock<Train>("Mock-Train");
             mockTrain.Setup(train => train.IsInJourney()).Returns(true);
@@ -145,10 +145,20 @@ namespace TrainStopTests
 
         [TestMethod]
         [Description("Tests to make sure maintenance can be begun on a station")]
-        public void MaintenanceCanBeStarted()
+        public void MaintenanceCanBeStartedTest()
         {
             station.StartMaintenance();
             Assert.IsTrue(station.IsUnderMaintenace());
+        }
+
+        [TestMethod]
+        [Description("Stations under maintenance cannot receive trains")]
+        public void UnderMaintenanceCannotReceiveTrainsTest()
+        {
+            station.StartMaintenance();
+            var mockTrain = new Mock<Train>("Mock-Train");
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
+            Assert.ThrowsException<ApplicationException>(() => station.ReceiveTrain(mockTrain.Object));
         }
     }
 }
