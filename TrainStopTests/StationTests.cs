@@ -160,5 +160,19 @@ namespace TrainStopTests
             mockTrain.Setup(train => train.IsInJourney()).Returns(true);
             Assert.ThrowsException<ApplicationException>(() => station.ReceiveTrain(mockTrain.Object));
         }
+
+        [TestMethod]
+        [Description("Stations under maintenance cannot release trains")]
+        public void UnderMaintenanceCannotReleaseTrainsTest()
+        {
+            string trainName = "Mock-Train";
+            var mockTrain = new Mock<Train>(trainName);
+            mockTrain.Setup(train => train.IsInJourney()).Returns(true);
+            station.ReceiveTrain(mockTrain.Object);
+            station.StartMaintenance();
+            mockTrain.Setup(train => train.IsInJourney()).Returns(false);
+            mockTrain.Setup(train => train.GetName()).Returns(trainName);
+            Assert.ThrowsException<ApplicationException>(() => station.ReleaseTrain(trainName));
+        }
     }
 }
