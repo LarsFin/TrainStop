@@ -142,5 +142,13 @@ namespace TrainStopTests
             }
             Assert.ThrowsException<ApplicationException>(() => station.ReceiveTrain(mockTrain.Object));
         }
+
+        [TestMethod]
+        [Description("Tests to make sure maintenance can be begun on a station")]
+        public void MaintenanceCanBeStarted()
+        {
+            station.StartMaintenance();
+            Assert.IsTrue(station.IsUnderMaintenace());
+        }
     }
 }

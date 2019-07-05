@@ -9,6 +9,7 @@ namespace TrainStop
         private readonly List<Train> trains;
         private const int DEFAULT_CAPACITY = 6;
         private readonly int capacity;
+        private bool underMaintenance;
 
         public Station(string name)
         {
@@ -64,6 +65,12 @@ namespace TrainStop
             }
         }
 
+        // Starts maintenance on a station
+        public void StartMaintenance()
+        {
+            
+        }
+
         // Returns the name of the station.
         public string GetName() => name;
 
@@ -78,5 +85,8 @@ namespace TrainStop
 
         // Returns the capacity of the station.
         public int GetCapacity() => capacity;
+
+        // Returns whether or not the station is under maintenance
+        public bool IsUnderMaintenace() => underMaintenance;
     }
 }

@@ -117,9 +117,23 @@ So I avoid trains crashing,
 Stations should not receive a train when at capacity.
 ```
 
-Stations can be under maintenance [ ]
+Stations can be set have maintenance on them [ ]
 ```
 As a Station Manager,
-So work can occurr on a station with no disruption,
-Stations should not receive a train when under maintenance.
+So my station can grow and repair,
+Maintenance should be allowed to start on a station.
+```
+
+Stations under maintenance cannot receive or release any trains [ ]
+```
+As a Station Manager,
+To prevent any accidents,
+Stations should not receive or release a train when under maintenance.
+```
+
+Maintenance on stations can end [ ]
+```
+As a Station Manager,
+So my station can be accessible again to trains,
+Maintenance should be allowed to stop on a station.
 ```
