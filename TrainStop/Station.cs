@@ -28,6 +28,10 @@ namespace TrainStop
         // Station receives a train into its platforms
         public void ReceiveTrain(Train train)
         {
+            if (underMaintenance)
+            {
+                throw new ApplicationException("Cannot receive train while under maintenance!");
+            }
             if (trains.Count == capacity)
             {
                 throw new ApplicationException("Full! Cannot accept anymore trains");
