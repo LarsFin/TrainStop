@@ -82,7 +82,7 @@ namespace TrainStop
         // Stops maintenance on a station
         public void StopMaintenance()
         {
-            
+            underMaintenance = false;
         }
 
         // Returns the name of the station.
